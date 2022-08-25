@@ -1,0 +1,14 @@
+services:
+  node_react:
+    image: node:lts #change to alpine in production
+    container_name: react_docker
+    restart: unless-stopped
+    environment:
+      EXAMPLE: EXAMPLE
+    ports:
+      - '3000:3000'
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app
+    command: sh firstStart.sh
+
